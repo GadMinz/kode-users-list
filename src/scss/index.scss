@@ -1,0 +1,41 @@
+@import "~normalize.css";
+@import "variables";
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-primary;
+  font-family: "Inter", sans-serif;
+  color: $text-primary;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+}
