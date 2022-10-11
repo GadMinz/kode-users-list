@@ -1,9 +1,11 @@
 import React from "react";
 import s from "./Error.module.scss";
 import errorImg from "../../../../../assets/img/error.png";
-interface ErrorProps {}
+interface ErrorProps {
+  refresh: () => void;
+}
 
-const Error: React.FC<ErrorProps> = () => {
+const Error: React.FC<ErrorProps> = ({ refresh }) => {
   return (
     <div className={s.error}>
       <div>
@@ -11,7 +13,9 @@ const Error: React.FC<ErrorProps> = () => {
       </div>
       <div className={s.error_title}>Какой-то сверхразум все сломал</div>
       <div className={s.error_description}>Постараемся быстро починить</div>
-      <div className={s.error_link}>Попробовать снова</div>
+      <div className={s.error_link} onClick={refresh}>
+        Попробовать снова
+      </div>
     </div>
   );
 };
