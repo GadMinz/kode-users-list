@@ -1,0 +1,78 @@
+@import "../../scss/variables";
+.profile {
+  &_header {
+    background-color: $bg-secondary;
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px;
+    &_back {
+      margin: 28px 0 20px 0;
+      svg {
+        cursor: pointer;
+      }
+    }
+    &_user {
+      margin: 12px 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &_avatar {
+        height: 104px;
+        width: 104px;
+        margin-bottom: 24px;
+        img {
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+      &_title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 12px;
+        p {
+          display: inline;
+          margin: 0;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 22px;
+          color: $text-tertiary;
+        }
+      }
+      &_department {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        color: $text-secondary;
+      }
+    }
+  }
+  &_info {
+    padding: 15px 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    &_age {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      margin-bottom: 18px;
+      &_years {
+        color: $text-tertiary;
+      }
+      &_date {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+    }
+    &_phone {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+    }
+  }
+}
