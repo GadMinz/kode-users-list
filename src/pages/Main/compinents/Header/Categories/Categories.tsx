@@ -1,23 +1,27 @@
 import React from "react";
-import { Category } from "../../../../../redux/types";
 import s from "./Categories.module.scss";
+import { useAppDispatch } from "../../../../../hook";
+import { setCategory } from "../../../../../redux/slices/filterSlice";
+import { Category } from "../../../../../redux/types";
 
-interface CategoriesProps {}
+interface CategoriesProps {
+  category: Category;
+}
 
-type CategoryTitle =
-  | "Все"
-  | "Дизайн"
-  | "Аналитика"
-  | "Менеджмент"
-  | "iOS"
-  | "Android"
-  | "Frontend"
-  | "Backend"
-  | "Техподдержка"
-  | "QA"
-  | "Бэк-офис"
-  | "PR"
-  | "HR";
+export type CategoryTitle =
+    | "Все"
+    | "Дизайн"
+    | "Аналитика"
+    | "Менеджмент"
+    | "iOS"
+    | "Android"
+    | "Frontend"
+    | "Backend"
+    | "Техподдержка"
+    | "QA"
+    | "Бэк-офис"
+    | "PR"
+    | "HR";
 
 type CategoriesMapType = {
   [key in Category]: CategoryTitle;
@@ -41,18 +45,32 @@ export const categoriesMap: CategoriesMapType = {
 
 const categoriesShort = Object.keys(categoriesMap) as Category[];
 const categories: CategoryTitle[] = categoriesShort.map(
-  (key) => categoriesMap[key]
+    (key) => categoriesMap[key]
 );
 
-const Categories: React.FC<CategoriesProps> = () => {
+const Categories: React.FC<CategoriesProps> = ({ category }) => {
+  const dispatch = useAppDispatch();
+  const onClickCategory = (title: CategoryTitle) => {
+    dispatch(
+        setCategory(
+            categoriesShort.find((key) => categoriesMap[key] === title) || "all"
+        )
+    );
+  };
   return (
-    <div className={s.categories}>
-      <ul>
-        {categories.map((item, i) => (
-          <li key={i}>{item}</li>
-        ))}
-      </ul>
-    </div>
+      <div className={s.categories}>
+        <ul>
+          {categories.map((item, i) => (
+              <li
+                  onClick={() => onClickCategory(item)}
+                  key={i}
+                  className={categoriesMap[category] === item ? s.active : ""}
+              >
+                {item}
+              </li>
+          ))}
+        </ul>
+      </div>
   );
 };
 
