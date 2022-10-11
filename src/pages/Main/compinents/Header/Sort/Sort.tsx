@@ -1,5 +1,6 @@
 import React from "react";
 import GlobalSvgSelector from "../../../../../assets/icons/GlobalSvgSelector";
+import { SortType } from "../../../../../redux/types";
 import s from "./Sort.module.scss";
 import SortItem from "./SortItem";
 
@@ -7,8 +8,6 @@ interface SortProps {
   active: boolean;
   setActive: (b: boolean) => void;
 }
-
-export type SortType = "abc" | "b-day";
 
 type SortItemType = {
   id: SortType;

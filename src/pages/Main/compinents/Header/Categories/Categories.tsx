@@ -1,22 +1,8 @@
 import React from "react";
+import { Category } from "../../../../../redux/types";
 import s from "./Categories.module.scss";
 
 interface CategoriesProps {}
-
-type Category =
-  | "all"
-  | "design"
-  | "analytics"
-  | "management"
-  | "ios"
-  | "android"
-  | "frontend"
-  | "backend"
-  | "support"
-  | "qa"
-  | "back_office"
-  | "pr"
-  | "hr";
 
 type CategoryTitle =
   | "Все"

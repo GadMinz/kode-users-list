@@ -1,32 +1,9 @@
 import React from "react";
+import { UserItem } from "../../../../redux/types";
 import s from "./Users.module.scss";
 import UsersItem from "./UsersItem";
 
 interface UsersProps {}
-
-export type UserItem = {
-  id: string;
-  avatarUrl: string;
-  firstName: string;
-  lastName: string;
-  userTag: string;
-  department:
-    | "android"
-    | "ios"
-    | "design"
-    | "management"
-    | "qa"
-    | "back_office"
-    | "frontend"
-    | "hr"
-    | "pr"
-    | "backend"
-    | "support"
-    | "analytics";
-  position: string;
-  birthday: string;
-  phone: string;
-};
 
 const items: UserItem[] = [
   {

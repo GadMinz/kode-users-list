@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Users.module.scss";
 import { categoriesMap } from "../Header/Categories/Categories";
-import { UserItem } from "./Users";
+import {UserItem} from "../../../../redux/types";
 
 interface UsersItemProps {
   item: UserItem;

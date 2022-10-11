@@ -1,5 +1,5 @@
 import React from "react";
-import { SortType } from "./Sort";
+import { SortType } from "../../../../../redux/types";
 
 interface SortItemProps {
   id: SortType;
