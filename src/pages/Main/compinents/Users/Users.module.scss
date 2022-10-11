@@ -1,0 +1,40 @@
+@import "../../../../scss/variables";
+
+.users {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  &_item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    cursor: pointer;
+    &_avatar {
+      width: 72px;
+      height: 72px;
+      margin-right: 16px;
+      img {
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+    &_title {
+      font-weight: 500;
+      font-size: 16px;
+      p {
+        display: inline;
+        margin: 0;
+        font-size: 14px;
+        line-height: 18px;
+        color: $text-tertiary;
+      }
+    }
+    &_department {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      color: $text-secondary;
+    }
+  }
+}
