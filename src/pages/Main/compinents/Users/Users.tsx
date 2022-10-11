@@ -8,11 +8,21 @@ interface UsersProps {
   getUsers: () => void;
 }
 
-const Users: React.FC<UsersProps> = ({getUsers}) => {
+const Users: React.FC<UsersProps> = ({ getUsers }) => {
   const { items, status } = useAppSelector((state) => state.users);
+  let { searchValue } = useAppSelector((state) => state.filters);
+  searchValue = searchValue.toLowerCase();
+
+  let itemsFiltered: UserItem[] = items.filter(
+    (item: UserItem) =>
+      item.firstName.toLowerCase().includes(searchValue) ||
+      item.lastName.toLowerCase().includes(searchValue) ||
+      item.userTag.toLowerCase().includes(searchValue)
+  );
+
   return (
     <div className={s.users}>
-      {items.map((item: UserItem) => (
+      {itemsFiltered.map((item: UserItem) => (
         <UsersItem key={item.id} item={item} />
       ))}
     </div>
