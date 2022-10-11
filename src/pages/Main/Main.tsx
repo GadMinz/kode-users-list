@@ -2,13 +2,15 @@ import React from "react";
 import Header from "./compinents/Header/Header";
 import Users from "./compinents/Users/Users";
 
-interface MainProps {}
+interface MainProps {
+    getUsers: () => void
+}
 
-const Main: React.FC<MainProps> = () => {
+const Main: React.FC<MainProps> = ({getUsers}) => {
   return (
     <div>
       <Header />
-      <Users />
+      <Users getUsers={getUsers}/>
     </div>
   );
 };
