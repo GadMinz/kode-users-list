@@ -1,0 +1,35 @@
+@import "../../../../../scss/variables";
+.search {
+  width: 100%;
+  background-color: $bg-secondary;
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+  &_sort {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .active {
+    svg {
+      path {
+        fill: $content-active-primary;
+      }
+    }
+  }
+  input {
+    margin: 0 8px;
+    border: none;
+    background-color: $bg-secondary;
+    flex: 1;
+    font-weight: 400;
+    caret-color: $content-active-primary;
+  }
+  ::-webkit-input-placeholder {
+    font-weight: 500;
+    color: $content-secondary;
+  }
+}
