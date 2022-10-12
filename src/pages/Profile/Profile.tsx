@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Profile.module.scss";
 import GlobalSvgSelector from "../../assets/icons/GlobalSvgSelector";
+import { Link } from "react-router-dom";
 
 interface ProfileProps {}
 
@@ -8,9 +9,9 @@ const Profile: React.FC<ProfileProps> = () => {
   return (
     <div className={s.profile}>
       <div className={s.profile_header}>
-        <div className={s.profile_header_back}>
+        <Link to={"/"} className={s.profile_header_back}>
           <GlobalSvgSelector id="back" />
-        </div>
+        </Link>
         <div className={s.profile_header_user}>
           <div className={s.profile_header_user_avatar}>
             <img

@@ -1,6 +1,8 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "./hook";
 import Main from "./pages/Main/Main";
+import Profile from "./pages/Profile/Profile";
 import { fetchUsers } from "./redux/slices/usersSlice";
 
 const App: React.FC = () => {
@@ -15,7 +17,10 @@ const App: React.FC = () => {
 
   return (
     <div className="wrapper">
-      <Main getUsers={getUsers}/>
+      <Routes>
+        <Route path="/" element={<Main getUsers={getUsers} />} />
+        <Route path="/:id" element={<Profile />} />
+      </Routes>
     </div>
   );
 };
