@@ -1,10 +1,10 @@
 import React from "react";
-import GlobalSvgSelector from "../../../../../assets/icons/GlobalSvgSelector";
-import Sort from "../Sort/Sort";
 import s from "./Search.module.scss";
-import { setSearchValue } from "../../../../../redux/slices/filterSlice";
 import debounce from "lodash.debounce";
-import { useAppDispatch } from "../../../../../hook";
+import { useAppDispatch, useAppSelector } from "../../../../../hook";
+import { setSearchValue } from "../../../../../redux/slices/filterSlice";
+import Sort from "../Sort/Sort";
+import GlobalSvgSelector from "../../../../../assets/icons/GlobalSvgSelector";
 
 interface SearchProps {
   searchValue: string;
@@ -12,6 +12,8 @@ interface SearchProps {
 
 const Search: React.FC<SearchProps> = ({ searchValue }) => {
   const dispatch = useAppDispatch();
+  const { sort } = useAppSelector((state) => state.filters);
+
   const [value, setValue] = React.useState(searchValue);
   const [active, setActive] = React.useState(false);
 
@@ -35,7 +37,10 @@ const Search: React.FC<SearchProps> = ({ searchValue }) => {
         onChange={onChangeInput}
         placeholder="Введи имя, тег, почту..."
       />
-      <div className={s.search_sort} onClick={() => setActive(true)}>
+      <div
+        className={`${s.search_sort} ${sort === "b-day" && s.active}`}
+        onClick={() => setActive(true)}
+      >
         <GlobalSvgSelector id="sort" />
       </div>
       <Sort active={active} setActive={setActive} />

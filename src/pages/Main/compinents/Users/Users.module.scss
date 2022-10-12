@@ -36,5 +36,32 @@
       line-height: 16px;
       color: $text-secondary;
     }
+    &_bday {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      color: $text-secondary;
+      margin-left: auto;
+    }
+  }
+}
+
+.separation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  &_year {
+    width: 160px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: $content-secondary;
+    text-align: center;
+    margin: 0 12px;
+  }
+  &_line {
+    border: 1px solid #c3c3c6;
+    width: 50%;
   }
 }
